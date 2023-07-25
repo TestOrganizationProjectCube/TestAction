@@ -49,9 +49,9 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Utilisez le nouveau secret contenant le PAT
         with:
-          tag_name: ${{ env.date_today }}  # Utilisez la date comme balise
+          tag_name: ${{ env.date_today }}
           release_name: Release ${{ github.ref }}
           body: Release ${{ github.ref }} - ${{ env.playstore_name }} - ${{ env.date_today }} - ${{ env.repository_name }}
           draft: false
