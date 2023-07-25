@@ -49,7 +49,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Utilisez le nouveau secret contenant le PAT
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Utilisez le jeton d'accès GITHUB_TOKEN par défaut
         with:
           tag_name: ${{ env.date_today }}
           release_name: Release ${{ github.ref }}
