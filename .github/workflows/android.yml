@@ -35,7 +35,9 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Run gradle tests
-        run: ./gradlew test
+        run: |
+            sed -i 's/\r$//' ./gradlew 
+            ./gradlew test
 
       - name: Build gradle project
         run: ./gradlew build
